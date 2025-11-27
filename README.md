@@ -47,7 +47,7 @@ mv checkpoints/ VisualModel/SadTalker/
 ```
 Upload your images, audios, and article into `assets/` directory.
 
-Note: you need to upload audio and portrait image for both anchor and author. The names for anchor files must be: anchor.png and anchor.wav
+Note: you need to upload audio and portrait image for both anchor and author. The names for anchor files must be: `anchor.png` and `anchor.wav`.
 
 Final step, run:
 ```
