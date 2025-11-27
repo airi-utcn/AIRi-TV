@@ -43,8 +43,8 @@ Move both directories into your cloned git repo and run:
 ```
 mv checkpoints/ VisualModel/SadTalker/
 ```
-Upload your image, audio and article into `assets/` directory.
-Note: you need to upload audio for both anchor and author. 
+Upload your images, audios, and article into `assets/` directory.
+Note: you need to upload audio and portrait image for both anchor and author. 
 
 Final step, run:
 ```
