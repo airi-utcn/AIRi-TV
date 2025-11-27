@@ -7,7 +7,7 @@ Made with ❤️ for the Artificial Intelligence Research Institute at the Techn
 ## SETUP:
 
 IMPORTANT:
-Before you continue, make sure you link your HuggingFace account with the machine you work with and ffmpeg installed into your docker container. To use Llama-3.1-8B-Instruct (as used in this repo), request access from Meta for the model checkpoint [here](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
+Before you continue, make sure you link your HuggingFace account with the machine you work with and ffmpeg version==4.4.2 installed into your docker container. To use Llama-3.1-8B-Instruct (as used in this repo), request access from Meta for the model checkpoint [here](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
 
 ### To create all the venvs and meet the requirements of each model and the bash script that does the full generation:
 
