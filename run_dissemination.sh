@@ -43,7 +43,7 @@ echo "concatenation done"
  
 
 
-conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
+LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
     --driven_audio assets/audio/anchor_full_audio.wav \
     --source_image $ANCHOR_IMG \
     --enhancer gfpgan \
@@ -53,7 +53,7 @@ conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
 ANCHOR_VIDEO=$(ls -t assets/video/*.mp4 | head -n 1)
 echo "ANCHOR VIDEO = $ANCHOR_VIDEO
 
-conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
+LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
     --driven_audio assets/audio/author_full_audio.wav \
     --source_image $AUTHOR_IMG \
     --enhancer gfpgan \
