@@ -26,6 +26,7 @@ conda deactivate
 conda create -yn chatterbox python==3.11
 conda activate chatterbox
 pip install -r requirements_TTS.txt
+pip install chatterbox-tts --no-deps
 conda deactivate 
 
 conda create -yn sadtalker python==3.8
