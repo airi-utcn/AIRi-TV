@@ -51,7 +51,7 @@ LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadT
     --checkpoint_dir VisualModel/SadTalker/checkpoints \
 
 ANCHOR_VIDEO=$(ls -t assets/video/*.mp4 | head -n 1)
-echo "ANCHOR VIDEO = $ANCHOR_VIDEO
+echo "ANCHOR VIDEO = $ANCHOR_VIDEO"
 
 LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
     --driven_audio assets/audio/author_full_audio.wav \
