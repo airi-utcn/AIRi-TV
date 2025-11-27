@@ -57,5 +57,7 @@ Wait for the system to create your video. The final output will be saved as: `as
 
 Enjoy! :)
 
+## Acknowledgement
 
+This work was supported by a research scholarship from Bitdefender.
 
