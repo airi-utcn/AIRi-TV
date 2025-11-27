@@ -12,7 +12,7 @@ AUTHOR_REF_AUDIO="$3"
 
 
 ANCHOR_IMG="assets/anchor.png"
-ANCHOR_REF_AUDIO="assets/LJ001-0001.wav"
+ANCHOR_REF_AUDIO="assets/anchor.wav"
 
 echo
 
