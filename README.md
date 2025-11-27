@@ -7,7 +7,9 @@ Made with ❤️ for the Artificial Intelligence Research Institute at the Techn
 ## SETUP:
 
 IMPORTANT:
+A 48GB GPU is required.
 Before you continue, make sure you link your HuggingFace account with the machine you work with and ffmpeg version==4.4.2 installed into your docker container. To use Llama-3.1-8B-Instruct (as used in this repo), request access from Meta for the model checkpoint [here](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct).
+
 
 ### To create all the venvs and meet the requirements of each model and the bash script that does the full generation:
 
@@ -44,7 +46,8 @@ Move both directories into your cloned git repo and run:
 mv checkpoints/ VisualModel/SadTalker/
 ```
 Upload your images, audios, and article into `assets/` directory.
-Note: you need to upload audio and portrait image for both anchor and author. 
+
+Note: you need to upload audio and portrait image for both anchor and author. The names for anchor files must be: anchor.png and anchor.wav
 
 Final step, run:
 ```
