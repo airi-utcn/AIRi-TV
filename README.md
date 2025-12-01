@@ -1,6 +1,6 @@
 # AIRi-TV
 
-The  research dissemination system for AIRi. It's made by a Mixture of Models to generate a conversation based on a research paper, with just 5s of author speech reference, a picture with the author and the article itself.
+BETA version of the research dissemination system for AIRi. It's made by a Mixture of Models to generate a conversation based on a research paper, with just 5s of author speech reference, a picture with the author and the article itself.
 
 Made with ❤️ for the Artificial Intelligence Research Institute at the Technical University of Cluj-Napoca.
 
