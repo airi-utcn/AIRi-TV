@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export CUDA_VISIBLE_DEVICES=0
+
 if [ "$#" -ne 3 ]; then
     echo "Usage: $0 <article.pdf> <author_image.png> <author_reference.wav>"
     exit 1
@@ -11,19 +13,29 @@ AUTHOR_IMG="$2"
 AUTHOR_REF_AUDIO="$3"
 
 
+ANCHOR_REF_AUDIO="assets/LJ001-0001.wav"
+
+
+
+conda run -n backgrounds python3 remove_background.py \
+    "assets/anchor.jpg" \
+    "assets/"
+
+conda run -n backgrounds python3 remove_background.py \
+    "$AUTHOR_IMG" \
+    "assets/"
+
 ANCHOR_IMG="assets/anchor.png"
-ANCHOR_REF_AUDIO="assets/anchor.wav"
+AUTHOR_BASENAME="${AUTHOR_IMG##*/}"
+AUTHOR_NAME="${AUTHOR_BASENAME%.*}"
+AUTHOR_IMG="assets/${AUTHOR_NAME}.png"
 
-echo
 
+# conda run -n llama python3 LLM/llama_3-8B.py \
+#     "$ARTICLE" \
+#     "assets/text/"
 
-
-conda run -n llama python3 LLM/llama_3-8B.py \
-    "$ARTICLE" \
-    "assets/text/"
-
-echo "LLM done"
-
+# echo "LLM done"
 
 
 
@@ -43,7 +55,7 @@ echo "concatenation done"
  
 
 
-LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
+conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
     --driven_audio assets/audio/anchor_full_audio.wav \
     --source_image $ANCHOR_IMG \
     --enhancer gfpgan \
@@ -53,7 +65,7 @@ LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadT
 ANCHOR_VIDEO=$(ls -t assets/video/*.mp4 | head -n 1)
 echo "ANCHOR VIDEO = $ANCHOR_VIDEO"
 
-LD_LIBRARY_PATH="" PYTHONPATH="" conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
+conda run -n sadtalker python3 VisualModel/SadTalker/inference.py \
     --driven_audio assets/audio/author_full_audio.wav \
     --source_image $AUTHOR_IMG \
     --enhancer gfpgan \
@@ -77,9 +89,17 @@ ffmpeg \
   -c:a aac -b:a 192k \
   assets/video/${ARTICLE_NAME}_podcast.mp4
 
+  echo "merging done"
+  echo "adding background and logo to video"
 
+  conda run -n backgrounds python3 add_background_video.py \
+    "assets/video/${ARTICLE_NAME}_podcast.mp4" \
+    "assets/video/${ARTICLE_NAME}_podcast.mp4" \
+    "assets/background.jpg" \
+    "assets/airi_logo.jpeg"
+    
 
-echo "videos done"
+echo "videos done, saved to assets/video/${ARTICLE_NAME}_podcast.mp4"
 echo
 
 
