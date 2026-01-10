@@ -51,7 +51,7 @@ mv checkpoints/ VisualModel/SadTalker/
 ```
 Upload your images, audios, and article into `assets/` directory.
 
-Note: you need to upload audio and portrait image for both anchor and author. The names for anchor files must be: `anchor.jpg` and `anchor.wav`.
+Note: you need to upload audio and portrait image for both anchor and author alongside the background and logo pictures. The names for anchor files must be: `anchor.jpg`, `anchor.wav`, and for the background and logo they should be : `background.jpg` and `airi_logo.jpeg`. You can skip the background and logo part by commenting the last part in the bash script.
 
 Final step, run:
 ```
