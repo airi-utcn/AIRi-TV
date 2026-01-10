@@ -20,6 +20,10 @@ cd AIRi-TV/
 mkdir assets/audio/
 mkdir assets/video/
 
+conda create -yn  backgrounds python==3.11.14
+pip install rembg onnxruntime "numpy<2.0" torch
+conda deactivate backgrounds
+
 conda create -yn llama python==3.11.14
 conda activate llama
 pip install -r requirements_LLM.txt
