@@ -63,6 +63,6 @@ Enjoy! :)
 
 ## Acknowledgement
 
-This work was supported by a research scholarship from Bitdefender and by the Romanian
+This work was funded by a research scholarship from Bitdefender and by the Romanian
 Ministry of Research, Innovation and Digitization project DLT AI SECSPP (id: PN-IV-P6-6.3-SOL-2024-2-0312)
 
