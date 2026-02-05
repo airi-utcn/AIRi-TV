@@ -31,11 +31,11 @@ AUTHOR_NAME="${AUTHOR_BASENAME%.*}"
 AUTHOR_IMG="assets/${AUTHOR_NAME}.png"
 
 
-# conda run -n llama python3 LLM/llama_3-8B.py \
-#     "$ARTICLE" \
-#     "assets/text/"
+conda run -n llama python3 LLM/llama_3-8B.py \
+    "$ARTICLE" \
+    "assets/text/"
 
-# echo "LLM done"
+echo "LLM done"
 
 
 
