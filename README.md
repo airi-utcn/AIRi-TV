@@ -61,6 +61,10 @@ Wait for the system to create your video. The final output will be saved as: `as
 
 Enjoy! :)
 
+## Contact
+
+david.combei[at]cs.utcluj.ro
+
 ## Acknowledgement
 
 This work was funded by a research scholarship from Bitdefender and by the Romanian
